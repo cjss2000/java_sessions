@@ -21,18 +21,19 @@ public class Main {
         Book forWhomtheBellTolls = new Book("For whom the bell tolls", Hemingway, 1952, true);
         Book CatinTheHat = new Book("The Cat in the Hat", DrSuess, 1947, true);
 
-        bookLibrary.addBooks(greenEggsandHam, 0);
-        bookLibrary.addBooks(aFarewellToArms, 1);
-        bookLibrary.addBooks(CatinTheHat, 2);
-        bookLibrary.printBookList();
-        bookLibrary.updateBook(forWhomtheBellTolls, 1);
-        bookLibrary.printBookList();
-        UUID CATUUID =  bookLibrary.getCurrentUUID("The Cat in the Hat");
-        System.out.println(CATUUID);
-        bookLibrary.removeBookByID(CATUUID);
-        bookLibrary.printBookList();
-
-
-
+        try {
+            bookLibrary.addBooks(greenEggsandHam, 0);
+            bookLibrary.addBooks(aFarewellToArms, 1);
+            bookLibrary.addBooks(CatinTheHat, 2);
+            bookLibrary.printBookList();
+            bookLibrary.updateBook(forWhomtheBellTolls, 1);
+            bookLibrary.printBookList();
+            UUID CATUUID = bookLibrary.getCurrentUUID("The Cat in the Hat");
+            System.out.println(CATUUID);
+            bookLibrary.removeBookByID(CATUUID);
+            bookLibrary.printBookList();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 }
