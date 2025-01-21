@@ -12,6 +12,9 @@ public class Publication {
     private int publicationYear;
     private Author author;
 
+
+
+
     public int getId() {
         return id;
     }
@@ -51,13 +54,13 @@ public class Publication {
         this.author = author;
     }
     Publication(){}
-//    Publication(int randId, String title, int publicationYear, Author author){
-//        Random random = new Random();
-//        this.randId = random.nextInt(1000);
-//        this.title = title;
-//        this.publicationYear = publicationYear;
-//        this.author = author;
-//    }
+    Publication(String title, int publicationYear, Author author){
+        Random random = new Random();
+        this.id = random.nextInt(100) + 100;
+        this.title = title;
+        this.publicationYear = publicationYear;
+        this.author = author;
+    }
     public double calculatePrice(){
 
         double unitPrice = 0.0;

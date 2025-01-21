@@ -59,5 +59,8 @@ public class Author {
     fullName = this.getFirstName() + " " + this.getLastName();
     return fullName;
     }
-
+@Override
+public String toString(){
+return "Author Information: " +  this.getFullName() + " Email: " + this.getEmail() + " Bio:" + this.getBiography();
+}
 }

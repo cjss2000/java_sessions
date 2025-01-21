@@ -32,5 +32,9 @@ public class Ebook {
         return ebookPrice;
     }
 
+    @Override
+    public String toString(){
+        return "Ebook information:  format: " + this.getFormat() + " file size in MB: " + this.getFileSizeMB();
+    }
 
 }
