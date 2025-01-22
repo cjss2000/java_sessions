@@ -1,6 +1,6 @@
 package homework;
 
-public class Ebook {
+public class Ebook extends Publication{
 
     private double fileSizeMB;
     private String format;
@@ -21,19 +21,18 @@ public class Ebook {
         this.format = format;
     }
 
-    Ebook(double fileSizeMB, String format){
+    Ebook(double fileSizeMB, String format) {
         this.fileSizeMB = fileSizeMB;
         this.format = format;
     }
 
-    public double calculatePrice(){
-        double ebookPrice = 0.0;
-
-        return ebookPrice;
+    public double calculatePrice() {
+        // TODO: add a price calculation for an ebook
+        return 0.0;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Ebook information:  format: " + this.getFormat() + " file size in MB: " + this.getFileSizeMB();
     }
 

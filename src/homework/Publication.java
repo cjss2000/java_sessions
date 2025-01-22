@@ -7,13 +7,11 @@ import java.util.Random;
 
 public class Publication {
 
+    // TODO: add a base price to this class as well
     private int id;
     private String title;
     private int publicationYear;
     private Author author;
-
-
-
 
     public int getId() {
         return id;

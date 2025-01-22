@@ -21,18 +21,13 @@ public class Book extends Publication {
         this.publisher = publisher;
     }
 
-
-
-    Book(String title, int publicationYear, Author author, int pageCount, String publisher){
+    Book(String title, int publicationYear, Author author, int pageCount, String publisher) {
         super(title, publicationYear, author);
         this.pageCount = pageCount;
         this.publisher = publisher;
-
-
-
     }
 
-    public double calculatePrice(){
+    public double calculatePrice() {
         double bookPrice = 0.0;
         double shippingCost = 1.5;
         bookPrice = bookPrice + shippingCost;
@@ -40,7 +35,7 @@ public class Book extends Publication {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Book details:  page count: " + this.getPageCount() + " publisher" + this.getPublisher();
     }
 }

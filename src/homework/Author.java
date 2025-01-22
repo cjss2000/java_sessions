@@ -28,7 +28,11 @@ public class Author {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if (validateEmail(email)) {
+            this.email = email;
+        } else {
+            System.out.println("Invalid email address");
+        }
     }
 
     public String getBiography() {
@@ -39,28 +43,24 @@ public class Author {
         this.biography = biography;
     }
 
-    Author(String firstName, String lastName, String email, String biography){
+    Author(String firstName, String lastName, String email, String biography) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.biography = biography;
     }
-    private void validateEmail(String email){
 
-    if (email.contains("@")){
-            System.out.println("email is a valid address " + email);
-        } else {
-        System.out.println("invalid email format");
-    }
+    private boolean validateEmail(String email) {
+        return email.contains("@");
     }
 
-    public String getFullName(){
-    String fullName = null;
-    fullName = this.getFirstName() + " " + this.getLastName();
-    return fullName;
+    public String getFullName() {
+        return this.getFirstName() + " " + this.getLastName();
     }
-@Override
-public String toString(){
-return "Author Information: " +  this.getFullName() + " Email: " + this.getEmail() + " Bio:" + this.getBiography();
-}
+
+    @Override
+    public String toString() {
+        return "Author Information: " + this.getFullName() + " Email: " + this.getEmail() + " Bio:"
+            + this.getBiography();
+    }
 }
