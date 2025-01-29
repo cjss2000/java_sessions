@@ -9,6 +9,7 @@ public class Electronics extends Item {
         this.hasBattery = hasBattery;
     }
 
+
     public boolean hasBattery() {
         return hasBattery;
     }

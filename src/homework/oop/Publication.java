@@ -1,6 +1,6 @@
 
 
-package homework;
+package homework.oop;
 
 import java.util.Random;
 
