@@ -2,7 +2,8 @@
 
 ## 📌 Scenario
 
-In this exercise, you will implement an **abstract class** in Java to model a **Car Rental System**, where rental cars are stored in a **HashMap** and different types of vehicles (Economy, Luxury) have different rental rates and deposit requirements.
+In this exercise, you will implement an **abstract class** in Java to model a **Car Rental System**, where rental cars are stored in a **HashMap** and different types of vehicles (Economy, Luxury)
+have different rental rates and deposit requirements.
 
 ---
 
@@ -15,7 +16,7 @@ In this exercise, you will implement an **abstract class** in Java to model a **
     - `model` (String) - The model of the car.
     - `rentalRate` (double) - The daily rental rate.
     - `isAvailable` (boolean) - Indicates if the car is available for rent.
-
+@
 - Implement the **constructor** to initialize these fields.
 
 - Declare the following **abstract methods**:
