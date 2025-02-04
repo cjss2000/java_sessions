@@ -4,6 +4,10 @@ public class HourlyEmployee extends Employee{
 
     private double hourlyWage;
 
+    public HourlyEmployee(String employeeId, String name, double baseSalary){
+        super(employeeId, name, baseSalary);
+    };
+
     @Override
     public double calculateSalary(){
         double baseSalary = hourlyWage;

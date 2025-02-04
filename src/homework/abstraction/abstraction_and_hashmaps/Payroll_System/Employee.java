@@ -36,7 +36,7 @@ public abstract class Employee {
         this.name = name;
         this.baseSalary = baseSalary;
     }
-    Employee(){};
+  //  Employee(){};
 
     abstract double calculateSalary();
 
