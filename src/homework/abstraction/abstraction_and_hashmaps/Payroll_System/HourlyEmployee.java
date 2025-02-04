@@ -8,9 +8,14 @@ public class HourlyEmployee extends Employee{
         super(employeeId, name, baseSalary);
     };
 
+//    @Override
+//    public double calculateSalary(double hoursWorked){
+//        double baseSalary = hourlyWage * hoursWorked;
+//        return baseSalary;
+//    }
     @Override
     public double calculateSalary(){
-        double baseSalary = hourlyWage;
+        double baseSalary = hourlyWage * baseSalary;
         return baseSalary;
-    }//this needs to be changed to hours worked
+    }
 }
