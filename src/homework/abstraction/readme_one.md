@@ -2,7 +2,9 @@
 
 ## 📌 Scenario
 
-In this exercise, you will implement an **abstract class** in Java to model an **Employee Payroll System**. The goal is to define a common structure for handling employee payments while allowing different types of employees to have their own salary calculation rules.
+In this exercise, you will implement an **abstract class** in Java to model an **Employee Payroll System**. 
+The goal is to define a common structure for handling employee payments while allowing different types of employees to
+basehave their own salary calculation rules.
 
 ---
 

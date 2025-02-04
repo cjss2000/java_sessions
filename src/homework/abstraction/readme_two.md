@@ -2,7 +2,9 @@
 
 ## 📌 Scenario
 
-In this exercise, you will implement an **abstract class** in Java to model an **E-Commerce Order Processing System**. The goal is to define a common structure for handling orders while allowing different types of orders to have their own shipping costs and discount rules.
+In this exercise, you will implement an **abstract class** in Java to model an **E-Commerce Order Processing System**. 
+The goal is to define a common structure for handling orders while allowing different types of orders to have their 
+own shipping costs and discount rules.
 
 ---
 
