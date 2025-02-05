@@ -5,6 +5,8 @@ public class Main {
         HourlyEmployee Steve = new HourlyEmployee("E001", "Steve", 4500.00);
         SalariedEmployee Tony = new SalariedEmployee("E002", "Tony", 2500.00);
         Tony.calculateSalary();
+        Tony.dispalyEmployeeinfo();
+        Steve.dispalyEmployeeinfo();
 
 
     }

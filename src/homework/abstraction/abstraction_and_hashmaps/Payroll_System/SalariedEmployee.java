@@ -21,9 +21,12 @@ public class SalariedEmployee extends Employee {
     @Override
     public double calculateSalary(){
         double salaryDeduction = 0.90;
-      double salary = this.getFixedSalary() * salaryDeduction;
+      double salary = this.getBaseSalary() * salaryDeduction;
+        System.out.println(this.getName() + " Has a salary of: " + salary);
         return salary;
         //return this.getFixedSalary() * salaryDeduction
+        //this method doesn't look right to me, I'm returning a salary, but I'm printing out my findings before the return, should this be a void method instead?
+
     }
 
 }
