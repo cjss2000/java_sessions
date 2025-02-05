@@ -41,7 +41,7 @@ public abstract class Employee {
     abstract double calculateSalary();
 
     public void dispalyEmployeeinfo(){
-        System.out.println("This will print out employee ID, Name, and Salary");
+        System.out.println("Employee ID: " + this.getEmployeeId() + " Name: " + this.getName() + " Salary :" + this.getBaseSalary() );
     }
 
 }

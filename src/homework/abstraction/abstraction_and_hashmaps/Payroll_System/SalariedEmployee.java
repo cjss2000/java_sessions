@@ -20,8 +20,10 @@ public class SalariedEmployee extends Employee {
 
     @Override
     public double calculateSalary(){
-        double baseSalary = 0;
-        return baseSalary;
+        double salaryDeduction = 0.90;
+      double salary = this.getFixedSalary() * salaryDeduction;
+        return salary;
+        //return this.getFixedSalary() * salaryDeduction
     }
 
 }
