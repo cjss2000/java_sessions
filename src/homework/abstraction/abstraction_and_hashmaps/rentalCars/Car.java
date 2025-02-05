@@ -55,7 +55,7 @@ Car(String carId, String brand, String model, double rentalRate, boolean isAvail
         this.rentalRate = rentalRate;
         this.isAvailable = isAvailable;
 }
-Car(){};
+
 
 abstract int getDepositAmount();
 abstract int calculateRentalCost(int days);
