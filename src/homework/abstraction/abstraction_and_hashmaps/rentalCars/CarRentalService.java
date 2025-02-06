@@ -5,10 +5,13 @@ import java.util.HashMap;
 public class CarRentalService {
     HashMap<String, Car> RentalService = new HashMap<String, Car>();
 
-    public void displayAvailableCars(){
-        System.out.println(RentalService.values());
+    public void displayAvailableCars() {
+        System.out.println("The following cars are listed on lot: ");
+        for (Car c : RentalService.values()) {
+            System.out.println(c.getBrand() + " " + c.getModel() );
 
         }
+    }
 
 
 
@@ -27,7 +30,8 @@ public class CarRentalService {
           else {
 
             Car car = RentalService.get(carId);
-            System.out.println(car.getBrand() + " " + car.getModel() + " was rented for " + days + "days");
+            //instantiating a Car object while using hte get index, can we review this? I tired to retrieve the object myself but had to cheat and use CHATGPT to figure it out :P
+            System.out.println(car.getBrand() + " " + car.getModel() + " was rented for " + days + " days");
 
 
             double rentalCost = (car.getRentalRate() * days) + car.getDepositAmount();
