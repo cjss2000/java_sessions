@@ -8,6 +8,14 @@ public abstract class Car {
     private double rentalRate;
     private boolean isAvailable;
 
+    public Car(String carId, String brand, String model, double rentalRate, boolean isAvailable) {
+        this.carId = carId;
+        this.brand = brand;
+        this.model = model;
+        this.rentalRate = rentalRate;
+        this.isAvailable = isAvailable;
+    }
+
     public String getCarId() {
         return carId;
     }
@@ -48,25 +56,17 @@ public abstract class Car {
         isAvailable = available;
     }
 
-Car(String carId, String brand, String model, double rentalRate, boolean isAvailable){
-        this.carId = carId;
-        this.brand = brand;
-        this.model = model;
-        this.rentalRate = rentalRate;
-        this.isAvailable = isAvailable;
-}
+    abstract int getDepositAmount();
 
+    abstract int calculateRentalCost(int days);
 
-abstract int getDepositAmount();
-abstract int calculateRentalCost(int days);
-
-public void toggleAvailability(){
-    if (isAvailable){
-        System.out.println("Car is available");
-        //also store care in hashmap
-    } else {
-        System.out.println("Sorry, car is not available");
+    public void toggleAvailability() {
+        if (isAvailable) {
+            System.out.println("Car is available");
+            //also store care in hashmap
+        } else {
+            System.out.println("Sorry, car is not available");
+        }
     }
-}
 
 }
