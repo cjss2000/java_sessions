@@ -5,7 +5,20 @@ public abstract class Employee {
     private String employeeId;
     private String name;
     private double baseSalary;
+    private int hoursWorked;
 
+    Employee(String employeeId, String name, double baseSalary, int hoursWorked) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.baseSalary = baseSalary;
+        this.hoursWorked = hoursWorked;
+    }
+
+    Employee() {
+        this.employeeId = "N/A";
+        this.name = "SOME DEFAULT NAME";
+        this.baseSalary = 0.0;
+    }
 
     public String getEmployeeId() {
         return employeeId;
@@ -31,17 +44,19 @@ public abstract class Employee {
         this.baseSalary = baseSalary;
     }
 
-    Employee(String employeeId, String name, double baseSalary){
-        this.employeeId = employeeId;
-        this.name = name;
-        this.baseSalary = baseSalary;
+    protected abstract double calculateSalary();
+
+    public int getHoursWorked() {
+        return hoursWorked;
     }
-  //  Employee(){};
 
-    abstract double calculateSalary();
+    public void setHoursWorked(int hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
 
-    public void dispalyEmployeeinfo(){
-        System.out.println("Employee ID: " + this.getEmployeeId() + " Name: " + this.getName() + " Salary :" + this.getBaseSalary() );
+    public void dispalyEmployeeinfo() {
+        System.out.println(
+            "Employee ID: " + this.getEmployeeId() + " Name: " + this.getName() + " Salary :" + this.calculateSalary());
     }
 
 }
