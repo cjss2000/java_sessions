@@ -9,5 +9,7 @@ public class Main {
         task1.markAsDone();
         System.out.println(task1.toString());
     }
+    TaskController tc = new TaskController();
+
 
 }
