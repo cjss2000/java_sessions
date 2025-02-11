@@ -8,9 +8,9 @@ public class Main {
         System.out.println(task1.toString());
         task1.markAsDone();
         System.out.println(task1.toString());
+        TaskController tc = new TaskController();
+        tc.getTaskView().displayMenu();
     }
-    TaskController tc = new TaskController();
-    tc.setTaskView(ts);
-    tc.getTaskView();
-
+  //  TaskController tc = new TaskController();
+ //   tc.sayHi();
 }
