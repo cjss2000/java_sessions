@@ -10,6 +10,7 @@ public class Main {
         System.out.println(task1.toString());
     }
     TaskController tc = new TaskController();
-
+    tc.setTaskView(ts);
+    tc.getTaskView();
 
 }
