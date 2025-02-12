@@ -5,59 +5,63 @@ import java.util.List;
 
 public class TaskService {
 
-    List<Task> list = new ArrayList<>();
+    // TODO: instead of instantiating the list here, you can pass it as a parameter to the constructor
+    private List<Task> list = new ArrayList<>();
 
-
-    public void addTask(Task task){
-
+    public void addTask(Task task) {
         list.add(task);
         System.out.println("The following Task has been added to the list: " + task.getId());
     }
-    //why wouldn't this.getId work if I already have task implied as a parameter?
 
-    public void removeTask(int id){
-        for (Task task : list){
-            if (task.getId() == id){
-              list.remove(task);
+    public void removeTask(int id) {
+        for (Task task : list) {
+            if (task.getId() == id) {
+                list.remove(task);
             }
         }
     }
 
-    public void getTaskById(int id){
-        for (Task task : list){
-            if (task.getId() == id){
+    // TODO: return a Task instead of void / system.out.println
+    public void getTaskById(int id) {
+        for (Task task : list) {
+            if (task.getId() == id) {
                 System.out.println(task);
             }
         }
     }
 
-    public void markTaskAsDone(int id){
-        for (Task task : list){
-            if (task.getId() == id){
-               task.setCompleted(true);
+    public void markTaskAsDone(int id) {
+        for (Task task : list) {
+            if (task.getId() == id) {
+                task.setCompleted(true);
+                // adding a break is just a better practice that prevents the rest of the loop from
+                // executing once the task has ALREADY been found and marked as done
+                break;
             }
         }
     }
 
-    public void getAllTasks(){
-        for (Task task : list){
-            System.out.println(task);
-        }
-
-    }
-
-    public void getPendingTasks(){
-    for (Task task : list){
-        if (!task.isCompleted()){
-            System.out.println("the following tasks have not been completed: ");
+    // TODO: return the list instead of void / system.out.println
+    public void getAllTasks() {
+        for (Task task : list) {
             System.out.println(task);
         }
     }
+
+    // TODO: create a new list into which you add the tasks that are not completed and then return that list
+    public void getPendingTasks() {
+        for (Task task : list) {
+            if (!task.isCompleted()) {
+                System.out.println("the following tasks have not been completed: ");
+                System.out.println(task);
+            }
+        }
     }
 
-    public void getCompletedTasks(){
-        for (Task task : list){
-            if (!task.isCompleted()){
+    // TODO: same as above
+    public void getCompletedTasks() {
+        for (Task task : list) {
+            if (!task.isCompleted()) {
                 System.out.println(task);
             }
         }

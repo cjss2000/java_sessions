@@ -6,7 +6,7 @@ public class TaskView {
 
     Scanner scanner = new Scanner(System.in);
 
-    public void displayMenu(){
+    public void displayMenu() {
         System.out.println("***Task Menu Front Page***");
         System.out.println(" 1) add Task");
         System.out.println(" 2) Remove task via ID");
@@ -16,13 +16,24 @@ public class TaskView {
         System.out.println(" 6) Return open Tasks");
         System.out.println(" 7) Return Completed Tasks");
     }
-    public void displayMessage(String message){
+
+    public void displayMessage(String message) {
+        System.out.println(message);
     }
-    public void displayError(String message){
+
+    // printing happens here as the view handles user INPUT and OUTPUT
+    public void displayError(String message) {
+        System.out.println("ERROR: " + message);
     }
-    public void readInt(){
+
+    // TODO: change the return type here to int as the idea here is that the view should READ the input/handle user input and this
+    // method in particular would handle reading an integer from the user
+    public void readInt() {
     }
-    public void readString(){
+
+    // TODO: change the return type here to String as the idea here is that the view should READ the input/handle user input and this
+    // method in particular would handle reading a string from the user
+    public void readString() {
 
     }
 }
