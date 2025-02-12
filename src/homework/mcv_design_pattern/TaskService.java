@@ -49,6 +49,7 @@ public class TaskService {
     public void getPendingTasks(){
     for (Task task : list){
         if (!task.isCompleted()){
+            System.out.println("the following tasks have not been completed: ");
             System.out.println(task);
         }
     }
