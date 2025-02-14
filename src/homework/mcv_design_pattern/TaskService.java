@@ -6,11 +6,15 @@ import java.util.List;
 public class TaskService {
 
     // TODO: instead of instantiating the list here, you can pass it as a parameter to the constructor
-    private List<Task> list = new ArrayList<>();
+    private List<Task> list;
+
+    TaskService(){
+        this.list = new ArrayList<>();
+    }
 
     public void addTask(Task task) {
         list.add(task);
-        System.out.println("The following Task has been added to the list: " + task.getId());
+      //  System.out.println("The following Task has been added to the list: " + task.getId());
     }
 
     public void removeTask(int id) {
@@ -22,12 +26,12 @@ public class TaskService {
     }
 
     // TODO: return a Task instead of void / system.out.println
-    public void getTaskById(int id) {
+    public Task getTaskById(int id) {
         for (Task task : list) {
             if (task.getId() == id) {
-                System.out.println(task);
             }
         }
+        return Task;
     }
 
     public void markTaskAsDone(int id) {

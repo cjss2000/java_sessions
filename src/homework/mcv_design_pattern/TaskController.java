@@ -13,11 +13,23 @@ public class TaskController {
     }
 
     public void run() {
-
-            {
+        boolean isRunning = true;
+        while (isRunning)    {
                 taskView.displayMenu();
                 int choice = taskView.readInt();
-                taskView.hanldeChoice(choice);
+               switch (choice) {
+                   case 1:
+                       taskView.displayMessage("Adding Task");
+                       taskService.addTask();
+                       taskView.handleTaskAdd();
+                        break;
+                   case 2:
+                       taskView.displayMessage("Removing task, Please provide an ID:");
+                       int  TaskId = taskView.readInt();
+                       taskService.removeTask(TaskId);
+                       taskView.handleTaskRemove();
+
+               }
                 }
                 // call the view's display menu
                 // get the user's choice by calling the views' getInt method
@@ -25,5 +37,9 @@ public class TaskController {
                 // within the swtich statement call the handle methods
 
     }
+        public String TaskFetcher(Task task){
+        String TaskFetcher = this.task.toString()
+        }
+
 
 }
