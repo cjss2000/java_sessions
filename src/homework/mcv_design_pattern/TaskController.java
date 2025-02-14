@@ -20,7 +20,7 @@ public class TaskController {
                switch (choice) {
                    case 1:
                        taskView.displayMessage("Adding Task");
-                       taskService.addTask();
+                    //   taskService.addTask();
                        taskView.handleTaskAdd();
                         break;
                    case 2:
@@ -37,9 +37,9 @@ public class TaskController {
                 // within the swtich statement call the handle methods
 
     }
-        public String TaskFetcher(Task task){
-        String TaskFetcher = this.task.toString()
-        }
+//        public String TaskFetcher(Task task){
+////        String TaskFetcher = this.task.toString()
+//       }
 
 
 }
