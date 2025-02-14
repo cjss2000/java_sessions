@@ -1,5 +1,7 @@
 package homework.mcv_design_pattern;
 
+import java.util.Scanner;
+
 public class TaskController {
 
     private TaskService taskService;
@@ -11,12 +13,17 @@ public class TaskController {
     }
 
     public void run() {
-        while (true) {
-            // call the view's display menu
-            // get the user's choice by calling the views' getInt method
-            // add a switch statement to handle the user's choice
-            // within the swtich statement call the handle methods
-        }
+
+            {
+                taskView.displayMenu();
+                int choice = taskView.readInt();
+                taskView.hanldeChoice(choice);
+                }
+                // call the view's display menu
+                // get the user's choice by calling the views' getInt method
+                // add a switch statement to handle the user's choice
+                // within the swtich statement call the handle methods
+
     }
 
 }

@@ -16,6 +16,29 @@ public class TaskView {
         System.out.println(" 6) Return open Tasks");
         System.out.println(" 7) Return Completed Tasks");
     }
+    public static void hanldeChoice(int choice){
+
+                switch (choice){
+                    case 1 :
+                    {
+                    }
+                    break;
+                    case 2: {
+                    }
+                    case 3: {
+                    }
+                    case 4: {
+                    }
+                    case 5: {
+                    }
+                    case 6 : {
+                    }
+                    case 7 : {
+                    }
+
+                }
+
+        }
 
     public void displayMessage(String message) {
         System.out.println(message);
@@ -28,7 +51,11 @@ public class TaskView {
 
     // TODO: change the return type here to int as the idea here is that the view should READ the input/handle user input and this
     // method in particular would handle reading an integer from the user
-    public void readInt() {
+    public int readInt() {
+        int userInt;
+        System.out.println("Please enter your selection: ");
+        userInt = scanner.nextInt();
+        return userInt;
     }
 
     // TODO: change the return type here to String as the idea here is that the view should READ the input/handle user input and this
@@ -37,3 +64,4 @@ public class TaskView {
 
     }
 }
+
