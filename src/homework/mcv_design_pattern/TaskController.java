@@ -28,6 +28,24 @@ public class TaskController {
                        int  TaskId = taskView.readInt();
                        taskService.removeTask(TaskId);
                        taskView.handleTaskRemove();
+                       break;
+                   case 3:
+                       taskView.displayMessage("Please provide task ID:");
+                       taskService.getTaskById(taskView.readInt());
+                       break;
+                   case 4:
+                       taskView.displayMessage("Here are your completed tasks: ");
+                       taskService.getCompletedTasks();
+                       break;
+                   case 5:
+                       taskView.displayMessage("Please enter ID for your task to view");
+                       break;
+                   case 6:
+                       taskView.displayMessage("Here are your open tasks: ");
+                       break;
+                   case 7:
+                       taskView.displayMessage("Here are your completed tasks");
+                       break;
 
                }
                 }

@@ -31,7 +31,7 @@ public class TaskService {
             if (task.getId() == id) {
             }
         }
-        return Task;
+        return task;
     }
 
     public void markTaskAsDone(int id) {
@@ -46,28 +46,33 @@ public class TaskService {
     }
 
     // TODO: return the list instead of void / system.out.println
-    public void getAllTasks() {
+    public String getAllTasks() {
+      String  allTasks = "";
         for (Task task : list) {
-            System.out.println(task);
+          allTasks =  task.getId() + " " + task.getDescription();
         }
+        return allTasks;
     }
 
     // TODO: create a new list into which you add the tasks that are not completed and then return that list
-    public void getPendingTasks() {
+    public String getPendingTasks() {
+        String pendingTasks = "";
         for (Task task : list) {
             if (!task.isCompleted()) {
-                System.out.println("the following tasks have not been completed: ");
-                System.out.println(task);
+             pendingTasks = task.getId() + " " + task.getDescription();p
             }
         }
+        return pendingTasks;
     }
 
     // TODO: same as above
-    public void getCompletedTasks() {
+    public String getCompletedTasks() {
+        String completedTasks = "";
         for (Task task : list) {
             if (!task.isCompleted()) {
-                System.out.println(task);
+               completedTasks = task.getId() + " " + task.getDescription();
             }
+            return completedTasks;
         }
     }
 }
