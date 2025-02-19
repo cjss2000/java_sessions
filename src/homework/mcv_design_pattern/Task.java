@@ -30,7 +30,7 @@ public class Task {
         isCompleted = completed;
     }
 
-    Task(int id, String description, boolean isCompleted){
+    public Task(int id, String description, boolean isCompleted){
         this.id = id;
         this.description = description;
         this.isCompleted = isCompleted;

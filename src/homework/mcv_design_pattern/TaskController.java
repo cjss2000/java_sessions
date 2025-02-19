@@ -19,9 +19,12 @@ public class TaskController {
                 int choice = taskView.readInt();
                switch (choice) {
                    case 1:
-                       taskView.displayMessage("Adding Task");
-                    //   taskService.addTask();
-                       taskView.handleTaskAdd();
+//                       taskView.displayMessage("Please input the task ID, you'd like to add");
+//                       taskService.addTask(taskView.userInput());
+//                       taskView.displayMessage("Adding Task");
+//                    //   taskService.addTask();
+//                       taskView.handleTaskAdd();
+                       addTaskfromUserInput();
                         break;
                    case 2:
                        taskView.displayMessage("Removing task, Please provide an ID:");
@@ -58,6 +61,10 @@ public class TaskController {
 //        public String TaskFetcher(Task task){
 ////        String TaskFetcher = this.task.toString()
 //       }
-
+    public void addTaskfromUserInput(){
+        int id = taskView.userIntInput();
+        String description = taskView.userInput();
+        boolean isCompleted = false;
+    }
 
 }

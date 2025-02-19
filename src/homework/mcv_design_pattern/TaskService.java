@@ -12,9 +12,10 @@ public class TaskService {
         this.list = new ArrayList<>();
     }
 
-    public void addTask(Task task) {
-        list.add(task);
+    public void addTask(int id, String description, boolean isCompleted) {
+        list.add(new Task(id, description, isCompleted));
       //  System.out.println("The following Task has been added to the list: " + task.getId());
+
     }
 
     public void removeTask(int id) {
@@ -26,12 +27,14 @@ public class TaskService {
     }
 
     // TODO: return a Task instead of void / system.out.println
-    public Task getTaskById(int id) {
+    public String getTaskById(int id) {
+        String foundTask = "";
         for (Task task : list) {
             if (task.getId() == id) {
+                foundTask = task.getId() + task.getDescription() + " is task completed: " + task.isCompleted();
             }
         }
-        return task;
+      return foundTask;
     }
 
     public void markTaskAsDone(int id) {
@@ -59,7 +62,7 @@ public class TaskService {
         String pendingTasks = "";
         for (Task task : list) {
             if (!task.isCompleted()) {
-             pendingTasks = task.getId() + " " + task.getDescription();p
+             pendingTasks = task.getId() + " " + task.getDescription();
             }
         }
         return pendingTasks;
@@ -69,10 +72,11 @@ public class TaskService {
     public String getCompletedTasks() {
         String completedTasks = "";
         for (Task task : list) {
-            if (!task.isCompleted()) {
+            if (task.isCompleted()) {
                completedTasks = task.getId() + " " + task.getDescription();
             }
-            return completedTasks;
-        }
+
+        }   return completedTasks;
     }
+
 }

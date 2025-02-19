@@ -7,7 +7,7 @@ public class TaskView {
     private Scanner scanner;
 
     public TaskView() {
-        Scanner scanner = new Scanner(System.in);
+        this.scanner = new Scanner(System.in);
     }
     public void displayMenu() {
         System.out.println("***Task Menu Front Page***");
@@ -18,8 +18,18 @@ public class TaskView {
         System.out.println(" 5) View Task");
         System.out.println(" 6) Return open Tasks");
         System.out.println(" 7) Return Completed Tasks");
+        int userInput = scanner.nextInt();
     }
 
+    public String userInput(){
+       String userInput = scanner.nextLine();
+        return userInput;
+    }
+
+    public int userIntInput(){
+       int inputInt = scanner.nextInt();
+        return inputInt;
+    }
 
     public void displayMessage(String message) {
         System.out.println(message);
