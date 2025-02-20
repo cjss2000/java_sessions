@@ -16,14 +16,10 @@ public class TaskController {
         boolean isRunning = true;
         while (isRunning)    {
                 taskView.displayMenu();
-                int choice = taskView.readInt();
+                int choice = taskView.userIntInput("Please select your choice: ");
                switch (choice) {
                    case 1:
-//                       taskView.displayMessage("Please input the task ID, you'd like to add");
-//                       taskService.addTask(taskView.userInput());
-//                       taskView.displayMessage("Adding Task");
-//                    //   taskService.addTask();
-//                       taskView.handleTaskAdd();
+
                        addTaskfromUserInput();
                         break;
                    case 2:
@@ -49,6 +45,10 @@ public class TaskController {
                    case 7:
                        taskView.displayMessage("Here are your completed tasks");
                        break;
+                   case 0:
+                       System.out.println("Killing system");
+                       isRunning = false;
+                       break;
 
                }
                 }
@@ -62,9 +62,11 @@ public class TaskController {
 ////        String TaskFetcher = this.task.toString()
 //       }
     public void addTaskfromUserInput(){
-        int id = taskView.userIntInput();
-        String description = taskView.userInput();
+        int id = taskView.userIntInput("Please enter your new task id: ");
+        String description = taskView.userInput("Please provide description of your new task: ");
         boolean isCompleted = false;
+        taskService.addTask(id, description, isCompleted);
+        taskView.displayMessage("Your new task has been added to the list, please find via your ID:" + taskService.getAllTasks() );
     }
 
 }

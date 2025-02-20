@@ -18,15 +18,17 @@ public class TaskView {
         System.out.println(" 5) View Task");
         System.out.println(" 6) Return open Tasks");
         System.out.println(" 7) Return Completed Tasks");
+        System.out.println(" 0) Kill system");
         int userInput = scanner.nextInt();
     }
 
-    public String userInput(){
+    public String userInput(String controllerDescription){
        String userInput = scanner.nextLine();
         return userInput;
     }
 
-    public int userIntInput(){
+    public int userIntInput(String controllerId){
+        displayMessage("Please enter your number: ");
        int inputInt = scanner.nextInt();
         return inputInt;
     }
