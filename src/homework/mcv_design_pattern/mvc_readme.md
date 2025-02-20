@@ -43,7 +43,19 @@ To improve structure and maintainability, we will **add a Service Layer** that a
 
 ---
 
-### 3️⃣ Create the **Controller** - `TaskController` Class
+###  3️⃣ Create the **View** - `TaskView` Class (Handles ALL User Interaction)
+
+- Uses `Scanner` to **interact with the user**.
+- Implements the following methods:
+  - `displayMenu()`: Shows the list of actions users can take.
+  - `displayMessage(String message)`: Prints a message to the user.
+  - `displayError(String message)`: Prints an error message to the user.
+  - `readInt()`: Reads an integer input from the user.
+  - `readString()`: Reads a string input from the user.
+- If you think that you need more methods for the program to work that I didn't mention here, feel free to add them.
+
+
+### 4️⃣ Create the **Controller** - `TaskController` Class
 
 - This class will **control** the system flow and delegate tasks to the **Service** and **View** layers.
 - It needs to have 2 instance variables: `TaskService` and `TaskView`.
@@ -54,37 +66,25 @@ To improve structure and maintainability, we will **add a Service Layer** that a
     - `handleDisplayTasks()`: Calls `TaskService` and sends the list to `TaskView` for display.
     - `handleDisplayPendingTasks()`: Calls `TaskService` and sends only **pending** tasks to `TaskView`.
     - `handleDisplayCompletedTasks()`: Calls `TaskService` and sends only **completed** tasks to `TaskView`.
-- If you think that you need more methods for the program to work that I didn't mention here, feel free to add them.
 
----
-
-### 4️⃣ Create the **View** - `TaskView` Class (Handles ALL User Interaction)
-
-- Uses `Scanner` to **interact with the user**.
-- Implements the following methods:
-    - `displayMenu()`: Shows the list of actions users can take.
-    - `displayMessage(String message)`: Prints a message to the user.
-    - `displayError(String message)`: Prints an error message to the user.
-    - `readInt()`: Reads an integer input from the user.
-    - `readString()`: Reads a string input from the user.
-- If you think that you need more methods for the program to work that I didn't mention here, feel free to add them.
-
----
-
-### 5️⃣ Create the **Main** Method in `TaskManagerApp`
-
-- Instantiate `TaskService`, `TaskController`, and `TaskView`.
-- **Wire** the classes together by passing the necessary dependencies.
-- Create a **single** method run() that will:
+  Create another method run() that will:
 - Display the **menu**, such as "Press 1 to add a task", "Press 2 to remove a task", etc... Press 0 to exit.
 - Continuously (using a while(true)) prompt the user for actions:
-    - Add a new task.
-    - Remove a task.
-    - Mark a task as done.
-    - View all tasks.
-    - View pending tasks.
-    - View completed tasks.
-    - Exit the program.
+  - Add a new task.
+  - Remove a task.
+  - Mark a task as done.
+  - View all tasks.
+  - View pending tasks.
+  - View completed tasks.
+  - Exit the program.
+
+- If you think that you need more methods for the program to work that I didn't mention here, feel free to add them.
+
+---
+
+### 5️⃣ Create the **Main** Method in `Main`
+
+- Instantiate the controller and call the run method which should take care of the rest
 ---
 
 ## 🎯 Expected Output Example
