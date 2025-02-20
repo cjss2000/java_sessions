@@ -12,7 +12,7 @@ public class TaskController {
         this.taskView = new TaskView();
     }
 
-    public void run() {
+    public void runner() {
         boolean isRunning = true;
         while (isRunning)    {
                 taskView.displayMenu();
