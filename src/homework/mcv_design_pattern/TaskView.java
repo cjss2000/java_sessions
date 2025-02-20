@@ -9,6 +9,7 @@ public class TaskView {
     public TaskView() {
         this.scanner = new Scanner(System.in);
     }
+
     public void displayMenu() {
         System.out.println("***Task Menu Front Page***");
         System.out.println(" 1) add Task");
@@ -19,53 +20,29 @@ public class TaskView {
         System.out.println(" 6) Return Incomplete Tasks");
         System.out.println(" 7) Return Completed Tasks");
         System.out.println(" 0) Kill system");
-
     }
 
-    public String userInput(String controllerDescription){
+    public String userInputText(String controllerDescription) {
         System.out.println(controllerDescription);
-       String userInput = scanner.nextLine();
+        String userInput = scanner.nextLine();
+        if (userInput.isEmpty()) {
+            userInput = scanner.nextLine();
+        }
         return userInput;
     }
 
-    public int userIntInput(String controllerId){
-        System.out.println(controllerId);
-       int inputInt = scanner.nextInt();
-        return inputInt;
+    public int userIntInput(String controllerMessage) {
+        System.out.println(controllerMessage);
+        return scanner.nextInt();
     }
 
     public void displayMessage(String message) {
         System.out.println(message);
     }
 
-    // printing happens here as the view handles user INPUT and OUTPUT
-    public void handleTaskAdd(){
-        System.out.println("Task has been added");
-    }
-    public void handleTaskRemove(){
-        System.out.println("Task has been removed per id");
-        System.out.println("Here is your current list: " );
-    }
-
     public void displayError(String message) {
         System.out.println("ERROR: " + message);
     }
-
-    // TODO: change the return type here to int as the idea here is that the view should READ the input/handle user input and this
-    // method in particular would handle reading an integer from the user
-    public int readInt() {
-        int userInt;
-        System.out.println("Please enter your selection: ");
-        userInt = this.scanner.nextInt();
-        return userInt;
-    }
-
-    // TODO: change the return type here to String as the idea here is that the view should READ the input/handle user input and this
-    // method in particular would handle reading a string from the user
-    public void readString() {
-
-    }
-
 
 }
 
