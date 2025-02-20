@@ -33,17 +33,20 @@ public class TaskController {
                        taskService.getTaskById(taskView.readInt());
                        break;
                    case 4:
-                       taskView.displayMessage("Here are your completed tasks: ");
-                       taskService.getCompletedTasks();
+                        taskView.displayMessage("Please provide task ID of task you'd like to complete");
+                       showTasktobeCompleted();
                        break;
                    case 5:
-                       taskView.displayMessage("Please enter ID for your task to view");
+                       taskView.displayMessage("Here are all tasks: ");
+                       showTasksfromService();
                        break;
                    case 6:
                        taskView.displayMessage("Here are your open tasks: ");
+                       showPendingTasks();
                        break;
                    case 7:
-                       taskView.displayMessage("Here are your completed tasks");
+                       taskView.displayMessage("Here are your completed tasks: ");
+                       showCompletedTasks();
                        break;
                    case 0:
                        System.out.println("Killing system");
@@ -69,4 +72,20 @@ public class TaskController {
         taskView.displayMessage("Your new task has been added to the list, please find via your ID:" + taskService.getAllTasks() );
     }
 
+    public void showTasksfromService(){
+       String showTasks = taskService.getAllTasks();
+        taskView.displayMessage(showTasks);
+
+    }
+    public void showCompletedTasks(){
+        String completedTasks = taskService.getCompletedTasks();
+        taskView.displayMessage(completedTasks);
+    }
+
+    public void showTasktobeCompleted(){
+        String finishedTask = taskService.markTaskAsDone(taskView.userIntInput(""));
+    }
+    public void showPendingTasks(){
+        String pendingTasks = taskService.getPendingTasks();
+    }
 }

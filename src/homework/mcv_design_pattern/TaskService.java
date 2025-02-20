@@ -38,15 +38,18 @@ public class TaskService {
       return foundTask;
     }
 
-    public void markTaskAsDone(int id) {
+    public String markTaskAsDone(int id) {
+        String finishedTask = "";
         for (Task task : list) {
             if (task.getId() == id) {
                 task.setCompleted(true);
                 // adding a break is just a better practice that prevents the rest of the loop from
                 // executing once the task has ALREADY been found and marked as done
+                finishedTask = task.getId() + task.getDescription() + " task is now completed = " + task.isCompleted();
                 break;
             }
         }
+        return finishedTask;
     }
 
     // TODO: return the list instead of void / system.out.println

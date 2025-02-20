@@ -15,11 +15,11 @@ public class TaskView {
         System.out.println(" 2) Remove task via ID");
         System.out.println(" 3) Find Task by ID");
         System.out.println(" 4) Complete Task");
-        System.out.println(" 5) View Task");
-        System.out.println(" 6) Return open Tasks");
+        System.out.println(" 5) View all Tasks");
+        System.out.println(" 6) Return Incomplete Tasks");
         System.out.println(" 7) Return Completed Tasks");
         System.out.println(" 0) Kill system");
-       userIntInput("Please make your choice");
+
     }
 
     public String userInput(String controllerDescription){
@@ -29,6 +29,7 @@ public class TaskView {
     }
 
     public int userIntInput(String controllerId){
+        System.out.println(controllerId);
        int inputInt = scanner.nextInt();
         return inputInt;
     }
