@@ -25,10 +25,10 @@ public class ContactService {
     }
 
     // TODO: return a contact instead of printing it
-    public void getContactById(int id) {
+    public Contact getContactById(int id) {
         for (Contact contact : list) {
             if (contact.getId() == id) {
-                System.out.println(contact);
+               return contact;
                 //fix this later with print method
             }
         }

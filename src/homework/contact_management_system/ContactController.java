@@ -66,5 +66,10 @@ public class ContactController {
     public void addTaskfromInput() {
 
     }
+
+    public void handleSearch(){
+        cv.readInt("Please list the ID you'd like to search: ");
+        cs.getContactById()
+    }
 }
 
