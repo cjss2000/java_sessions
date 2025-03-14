@@ -32,6 +32,7 @@ public class ContactService {
                 //fix this later with print method
             }
         }
+        return null;
     }
 
     public void getAllContacts() {
