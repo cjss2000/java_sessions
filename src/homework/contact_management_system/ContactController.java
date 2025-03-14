@@ -7,17 +7,17 @@ public class ContactController {
     private ContactService cs;
     private ContactView cv;
 
-    ContactController(){
+    ContactController() {
         this.cs = new ContactService();
         this.cv = new ContactView();
     }
 
-    public void run(){
+    public void run() {
         boolean isRunning = true;
-        while (isRunning){
+        while (isRunning) {
             cv.displayMenu();
             int choice = cv.readInt("Please select your choice");
-            switch(choice) {
+            switch (choice) {
                 case 1:
                     cv.displayMessage("Add a new Contact:");
                     handleAddContact();
@@ -43,30 +43,28 @@ public class ContactController {
         }
     }
 
-    public void handleAddContact(){
-
+    public void handleAddContact() {
         String nameInput = cv.readString("Please enter contact name:");
         String phoneInput = cv.readString("Phone number: ");
         String emailInput = cv.readString("Enter email please:");
         int assignID = cv.readInt("Assign an ID");
-        cs.addContact(assignID, nameInput,phoneInput,emailInput);
+        cs.addContact(assignID, nameInput, phoneInput, emailInput);
     }
 
-    public void handleRemoveContact(int id){
+    public void handleRemoveContact(int id) {
         //  cs.removeContact();
     }
 
-    public void handleDisplayContacts(){
+    public void handleDisplayContacts() {
         cs.getAllContacts();
     }
 
-    public void handleDisplaySortedContacts(){
+    public void handleDisplaySortedContacts() {
         cs.getSortedContacts();
     }
 
-    public void addTaskfromInput(){
+    public void addTaskfromInput() {
 
     }
-
 }
 
