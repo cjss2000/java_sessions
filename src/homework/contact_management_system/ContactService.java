@@ -25,14 +25,14 @@ public class ContactService {
     }
 
     // TODO: return a contact instead of printing it
-    public Contact getContactById(int id) {
-        for (Contact contact : list) {
-            if (contact.getId() == id) {
-               return contact;
-                //fix this later with print method
-            }
-        }
-    }
+//    public Contact getContactById(int id) {
+//        for (Contact contact : list) {
+//            if (contact.getId() == id) {
+//               return contact;
+//                //fix this later with print method
+//            }
+//        }
+//    }
 
     public void getAllContacts() {
         for (Contact contact : list) {
