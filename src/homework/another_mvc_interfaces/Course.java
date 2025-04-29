@@ -10,6 +10,7 @@ public class Course {
     private String instructor;
     private int durationInHours;
 
+
     Course(Long id, String title, String instructor, int durationInHours){
         this.id = id;
         this.title = title;
