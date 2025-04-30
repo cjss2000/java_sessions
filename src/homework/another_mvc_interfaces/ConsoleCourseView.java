@@ -1,5 +1,6 @@
 package homework.another_mvc_interfaces;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleCourseView implements CourseView{
@@ -21,6 +22,7 @@ public class ConsoleCourseView implements CourseView{
     }
     @Override
     public int getInputAsInterger(String message){
+        System.out.println(message);
         int input = scanner.nextInt();
         return input;
     }
@@ -33,7 +35,13 @@ public class ConsoleCourseView implements CourseView{
     public void printMessage(String message){
         System.out.println(message);
     }
-    @override
+
+    @Override
+    public void printCourse(Course course) {
+        System.out.println(course);
+    }
+
+    @Override
     public void printCourseList(List<Course> course){
         //print courselist, likely from ServiceImp class
     }

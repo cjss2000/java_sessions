@@ -2,13 +2,12 @@ package homework.contact_management_system;
 
 public class ContactController {
 
-    //    ContactService cs = new ContactService();
-//    ContactView cv = new ContactView();
+
     private ContactService service;
     private ContactView view;
 
     ContactController() {
-        this.service = new ContactService();
+  //      this.service = new ContactService();
         this.view = new ContactView();
     }
 
@@ -22,7 +21,7 @@ public class ContactController {
                     // TODO: extract this to a method: handleAddContact();
                     view.displayMessage("Add a new Contact:");
                     handleAddContact();
-                    service.getAllContacts();
+               //     service.getAllContacts();
                     break;
                 case 2:
                     System.out.println("Remove a contact");
@@ -49,7 +48,7 @@ public class ContactController {
         String phoneInput = view.readString("Phone number: ");
         String emailInput = view.readString("Enter email please:");
         int assignID = view.readInt("Assign an ID");
-        service.addContact(assignID, nameInput, phoneInput, emailInput);
+    //    service.addContact(assignID, nameInput, phoneInput, emailInput);
     }
 
     public void handleRemoveContact(int id) {

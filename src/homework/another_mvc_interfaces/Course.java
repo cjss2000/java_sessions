@@ -3,9 +3,6 @@ package homework.another_mvc_interfaces;
 public class Course {
 
     private Long id;
-
-
-
     private String title;
     private String instructor;
     private int durationInHours;
@@ -17,6 +14,14 @@ public class Course {
         this.instructor = instructor;
         this.durationInHours = durationInHours;
     }
+    Course(String title, String instructor, int durationInHours){
+        // TODO: generate random id here
+        this.id = id; // <-- here
+        this.title = title;
+        this.instructor = instructor;
+        this.durationInHours = durationInHours;
+    }
+
 
     public Long getId(){
         return id;
