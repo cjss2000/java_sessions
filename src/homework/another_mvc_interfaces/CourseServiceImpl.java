@@ -14,19 +14,20 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Course updateCourse(Long id, String title, String instructor, int duration){
+    public Course updateCourse(Long id, String title, String instructor, int duration) {
         Course updatedCourse = null;
-        for (Course course : list){
-            if  (course.getId() == id){
-            updatedCourse = new Course(id, title, instructor, duration);
-        }
-        return updatedCourse;
+        for (Course course : list) {
+            if (course.getId() == id) {
+                updatedCourse = new Course(id, title, instructor, duration);
+            }
+
+        }  return updatedCourse;
     }
 
     @Override
     public Course getCourseById(Long id){
             Course foundCourse = null;
-        }
+
        for  (Course course : list){
             if (course.getId() == id){
           foundCourse =  System.out.println(course.toString());
