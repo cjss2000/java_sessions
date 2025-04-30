@@ -10,6 +10,16 @@ public class ConsoleCourseView implements CourseView{
     }
 
     @Override
+    public void displayMenu(){
+        System.out.println("Welcome to the Course Management System!");
+        System.out.println("-----------------------------------------");
+        System.out.println("1. Create a new Course");
+        System.out.println("2. Remove a contact");
+        System.out.println("3. List all Courses");
+        System.out.println("4. View Course via ID");
+        System.out.println("5. Exit program");
+    }
+    @Override
     public int getInputAsInterger(String message){
         int input = scanner.nextInt();
         return input;

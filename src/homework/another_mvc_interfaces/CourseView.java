@@ -6,4 +6,5 @@ public interface CourseView {
     void printMessage(String message);
     void printCourse(Course course);
     void printCourseList(List<Course> courses);
+    void displayMenu();
 }
