@@ -6,7 +6,7 @@ public interface CourseService {
 
     Course createCourse(String title, String instructor, int duration);
     Course updateCourse(Long id, String title, String instructor, int duration);
-    List<Course> listAllCourses();
+    Course listAllCourses();
     Course getCourseById(Long id);
     void deleteCourse(Long id);
 

@@ -31,6 +31,14 @@ public class CourseServiceImpl implements CourseService {
         }
        return
     }
+    @Override
+    public Course listAllCourses(){
+        String listObjects = null;
+        for (Course course : list){
+          listObjects =  System.out.println(list);
+        }
+        return listObjects;
+    }
 
 
 }
