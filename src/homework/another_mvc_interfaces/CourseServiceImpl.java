@@ -17,19 +17,22 @@ public class CourseServiceImpl implements CourseService {
     public Course updateCourse(Long id, String title, String instructor, int duration){
         Course updatedCourse = null;
         for (Course course : list){
-            Course updatedCourse = new Course(id, title, instructor, duration);
+            if  (course.getId() == id){
+            updatedCourse = new Course(id, title, instructor, duration);
         }
         return updatedCourse;
     }
 
     @Override
     public Course getCourseById(Long id){
+            Course foundCourse = null;
+        }
        for  (Course course : list){
             if (course.getId() == id){
-                System.out.println(course);
+          foundCourse =  System.out.println(course.toString());
             }
         }
-       return
+       return foundCourse;
     }
     @Override
     public Course listAllCourses(){
@@ -38,6 +41,14 @@ public class CourseServiceImpl implements CourseService {
           listObjects =  System.out.println(list);
         }
         return listObjects;
+    }
+    @Override
+    public void deleteCourse(Long id){
+        for (Course course : list){
+            if (course.getId() == id){
+                list.remove(course);
+            }
+        }
     }
 
 
