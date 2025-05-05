@@ -5,11 +5,11 @@ import java.util.List;
 
 public class CourseServiceImpl implements CourseService {
     List<Course> list;
-    long idCounter;
+  //  long idCounter;
 
     @Override
-    public Course createCourse(String title, String instructor, int duration){
-        Course course = new Course(idCounter, title, instructor,duration);
+    public Course createCourse(Long id, String title, String instructor, int duration){
+        Course course = new Course(id, title, instructor,duration);
         list.add(course);
         return course;
     }

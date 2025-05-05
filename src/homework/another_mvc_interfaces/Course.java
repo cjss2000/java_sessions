@@ -1,8 +1,10 @@
 package homework.another_mvc_interfaces;
 
+import java.util.Random;
+
 public class Course {
 
-    private Long id;
+    private Long id = new Random().nextLong();
     private String title;
     private String instructor;
     private int durationInHours;
@@ -16,6 +18,7 @@ public class Course {
     }
     Course(String title, String instructor, int durationInHours){
         // TODO: generate random id here
+    //    this.id = id;
         this.id = id; // <-- here
         this.title = title;
         this.instructor = instructor;

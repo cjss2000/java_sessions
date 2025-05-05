@@ -1,5 +1,7 @@
 package homework.another_mvc_interfaces;
 
+import java.util.Random;
+
 public class CourseController {
 
     ConsoleCourseView cv = new ConsoleCourseView();
@@ -15,20 +17,18 @@ public class CourseController {
                     gatherCourseInfoAndAddCourse("Please provide new course info");
                 break;
                 case 2:
-
                     gatherCourseInfoAndRemoveCourse("Ready to remove requested course..");
                    // gatherCourseInfo("Please provide list id you want to remove");
                     break;
                 case 3:
-                    cv.printMessage("Listing your courses...");
-                    cs.listAllCourses();
+                    gatherCourseInfoToPrintandPrint("Providing you with your current courses");
                     break;
                 case 4:
-                    cv.printMessage("Please provide your ID");
-                    cs.getCourseById();
+                    gatherCourseInfoandFindbyID("Please provide your course ID");
                     break;
                 case 5:
                     cv.printMessage("Exiting program");
+                    isRunning = false;
                     break;
                 case 6:
                     isRunning = false;
@@ -40,10 +40,11 @@ public class CourseController {
     }
     public void gatherCourseInfoAndAddCourse(String messageToDisplay){
         cv.printMessage(messageToDisplay);
+        long id = new Random().nextLong();
        int hours  =  cv.getInputAsInterger("Input duration: ");
         String title = cv.getInputAsString("Input title: ");
         String instructor  =  cv.getInputAsString("Input instructor name: ");
-        cs.createCourse(title, instructor, hours);
+        cs.createCourse(id, title, instructor, hours);
         cv.printMessage("Successfuly created a course");
 
     }
@@ -55,9 +56,14 @@ public class CourseController {
         cs.deleteCourse(courseIDtoDelete);
 
     }
-    public void gatherCourseInfoToPrint(String messageToDisplay){
-
+    public void gatherCourseInfoToPrintandPrint(String messageToDisplay){
+        cv.printMessage("Listing your courses...");
+        cs.listAllCourses();
     }
-
+    public void gatherCourseInfoandFindbyID(String messageToDisplay) {
+        cv.printMessage("Please provide your ID");
+        Long courseIDtoSearch =   cv.scanner.nextLong();
+        cs.getCourseById(courseIDtoSearch);
+    }
 
 }
