@@ -15,14 +15,17 @@ public class CourseController {
                     gatherCourseInfoAndAddCourse("Please provide new course info");
                 break;
                 case 2:
-                    cv.printMessage("Removing Course from List: ");
+
+                    gatherCourseInfoAndRemoveCourse("Ready to remove requested course..");
                    // gatherCourseInfo("Please provide list id you want to remove");
                     break;
                 case 3:
                     cv.printMessage("Listing your courses...");
+                    cs.listAllCourses();
                     break;
                 case 4:
                     cv.printMessage("Please provide your ID");
+                    cs.getCourseById();
                     break;
                 case 5:
                     cv.printMessage("Exiting program");
@@ -42,6 +45,17 @@ public class CourseController {
         String instructor  =  cv.getInputAsString("Input instructor name: ");
         cs.createCourse(title, instructor, hours);
         cv.printMessage("Successfuly created a course");
+
+    }
+    public void gatherCourseInfoAndRemoveCourse(String messageToDisplay){
+        cv.printMessage(messageToDisplay);
+       cv.printMessage("Please provide ID for course you'd like to remove:");
+     //  Long courseIDtoDelete = cv.getInputAsInterger("Please provide ID for course you'd like to remove:");
+        Long courseIDtoDelete =   cv.scanner.nextLong();
+        cs.deleteCourse(courseIDtoDelete);
+
+    }
+    public void gatherCourseInfoToPrint(String messageToDisplay){
 
     }
 

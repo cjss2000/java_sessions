@@ -43,6 +43,7 @@ public class CourseServiceImpl implements CourseService {
         for (Course course : list){
             if (course.getId() == id){
                 list.remove(course);
+                System.out.println(course + " Has been deleted!");
             }
         }
     }
