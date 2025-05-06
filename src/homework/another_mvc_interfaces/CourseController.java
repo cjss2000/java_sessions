@@ -41,7 +41,7 @@ public class CourseController {
     public void gatherCourseInfoAndAddCourse(String messageToDisplay){
         cv.printMessage(messageToDisplay);
         long id = new Random().nextLong();
-       int hours  =  cv.getInputAsInterger("Input duration: ");
+        int hours  =  cv.getInputAsInterger("Input duration: ");
         String title = cv.getInputAsString("Input title: ");
         String instructor  =  cv.getInputAsString("Input instructor name: ");
         cs.createCourse(id, title, instructor, hours);

@@ -15,7 +15,7 @@ public class ConsoleCourseView implements CourseView{
         System.out.println("Welcome to the Course Management System!");
         System.out.println("-----------------------------------------");
         System.out.println("1. Create a new Course");
-        System.out.println("2. Remove a contact");
+        System.out.println("2. Remove a Course");
         System.out.println("3. List all Courses");
         System.out.println("4. View Course via ID");
         System.out.println("5. Exit program");
@@ -28,6 +28,7 @@ public class ConsoleCourseView implements CourseView{
     }
     @Override
     public String getInputAsString(String message){
+        System.out.println(message);
         String newMessage = scanner.next();
         return newMessage;
     }
@@ -43,7 +44,7 @@ public class ConsoleCourseView implements CourseView{
 
     @Override
     public void printCourseList(List<Course> course){
-        //print courselist, likely from ServiceImp class
+        System.out.println(course);
     }
 
 }

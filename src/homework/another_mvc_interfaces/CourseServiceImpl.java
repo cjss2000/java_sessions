@@ -1,10 +1,12 @@
 package homework.another_mvc_interfaces;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class CourseServiceImpl implements CourseService {
-    List<Course> list;
+    List<Course> list = new ArrayList<>();
+
   //  long idCounter;
 
     @Override
