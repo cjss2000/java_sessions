@@ -7,13 +7,12 @@ public class Contact {
     private String phone;
     private String email;
 
-    Contact(int id, String name, String phone, String email){
+    Contact(int id, String name, String phone, String email) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.email = email;
     }
-
 
     public int getId() {
         return id;
@@ -47,13 +46,7 @@ public class Contact {
         this.email = email;
     }
 
-    public void compareTo(String name){
-
-    }
-
-    public String toString(){
+    public String toString() {
         return this.getName() + " " + this.getPhone() + " " + this.getEmail() + " " + " System ID: " + this.getId();
     }
-
-
 }

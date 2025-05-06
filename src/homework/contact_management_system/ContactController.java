@@ -2,26 +2,26 @@ package homework.contact_management_system;
 
 public class ContactController {
 
-    //    ContactService cs = new ContactService();
-//    ContactView cv = new ContactView();
-    private ContactService cs;
-    private ContactView cv;
 
-    ContactController(){
-        this.cs = new ContactService();
-        this.cv = new ContactView();
+    private ContactService service;
+    private ContactView view;
+
+    ContactController() {
+  //      this.service = new ContactService();
+        this.view = new ContactView();
     }
 
-    public void run(){
+    public void run() {
         boolean isRunning = true;
-        while (isRunning){
-            cv.displayMenu();
-            int choice = cv.readInt("Please select your choice");
-            switch(choice) {
+        while (isRunning) {
+            view.displayMenu();
+            int choice = view.readInt("Please select your choice");
+            switch (choice) {
                 case 1:
-                    cv.displayMessage("Add a new Contact:");
+                    // TODO: extract this to a method: handleAddContact();
+                    view.displayMessage("Add a new Contact:");
                     handleAddContact();
-                    cs.getAllContacts();
+               //     service.getAllContacts();
                     break;
                 case 2:
                     System.out.println("Remove a contact");
@@ -33,7 +33,7 @@ public class ContactController {
                     System.out.println("View all sorted contacts");
                     break;
                 case 5:
-                    System.out.println("Search for a specific contacts");
+                    handleSearch();
                     break;
                 case 6:
                     isRunning = false;
@@ -43,30 +43,38 @@ public class ContactController {
         }
     }
 
-    public void handleAddContact(){
-
-        String nameInput = cv.readString("Please enter contact name:");
-        String phoneInput = cv.readString("Phone number: ");
-        String emailInput = cv.readString("Enter email please:");
-        int assignID = cv.readInt("Assign an ID");
-        cs.addContact(assignID, nameInput,phoneInput,emailInput);
+    public void handleAddContact() {
+        String nameInput = view.readString("Please enter contact name:");
+        String phoneInput = view.readString("Phone number: ");
+        String emailInput = view.readString("Enter email please:");
+        int assignID = view.readInt("Assign an ID");
+    //    service.addContact(assignID, nameInput, phoneInput, emailInput);
     }
 
-    public void handleRemoveContact(int id){
+    public void handleRemoveContact(int id) {
         //  cs.removeContact();
     }
 
-    public void handleDisplayContacts(){
-        cs.getAllContacts();
+    public void handleDisplayContacts() {
+        service.getAllContacts();
     }
 
-    public void handleDisplaySortedContacts(){
-        cs.getSortedContacts();
+    public void handleDisplaySortedContacts() {
+        service.getSortedContacts();
     }
 
-    public void addTaskfromInput(){
+    public void addTaskfromInput() {
 
     }
 
+    public void handleSearch() {
+        int idToSearchFor = view.readInt("Please list the ID you'd like to search: ");
+        Contact contactFound = service.getContactById(idToSearchFor);
+        if (contactFound == null) {
+            view.displayError("Contact not found");
+        } else {
+            view.displayMessage("Contact found: " + contactFound.toString());
+        }
+    }
 }
 

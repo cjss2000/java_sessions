@@ -14,6 +14,8 @@ public class ContactService {
         list.add(new Contact(id, name, phone, email));
     }
 
+    // TODO: pass an name instead of the id
+    // TODO: add exceptions for when the id is not found
     public void removeContact(int id) {
         for (Contact contact : list) {
             if (contact.getId() == id) {
@@ -22,22 +24,25 @@ public class ContactService {
         }
     }
 
-    public void getContactById(int id){
-        for (Contact contact : list){
-            if(contact.getId() == id){
-                System.out.println(contact);
+    // TODO: return a contact instead of printing it
+    public Contact getContactById(int id) {
+        for (Contact contact : list) {
+            if (contact.getId() == id) {
+                return contact;
                 //fix this later with print method
             }
         }
+        return null;
     }
 
-    public void getAllContacts(){
-        for (Contact contact : list){
+    public void getAllContacts() {
+        for (Contact contact : list) {
             contact.toString();
             //fix this later with print method
         }
     }
-    public void getSortedContacts(){
+
+    public void getSortedContacts() {
 
     }
 }
