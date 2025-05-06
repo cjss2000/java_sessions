@@ -31,6 +31,7 @@ public class CourseServiceImpl implements CourseService {
 
        for  (Course course : list){
             if (course.getId() == id){
+                System.out.println(course);
           return course;
             }
         }
@@ -38,6 +39,9 @@ public class CourseServiceImpl implements CourseService {
     }
     @Override
     public List<Course> listAllCourses(){
+        for (Course course : list){
+            System.out.println(course);
+        }
         return list;
     }
     @Override
