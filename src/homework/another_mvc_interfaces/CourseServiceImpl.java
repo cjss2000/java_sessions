@@ -5,13 +5,14 @@ import java.util.List;
 
 
 public class CourseServiceImpl implements CourseService {
+
     List<Course> list = new ArrayList<>();
 
-  //  long idCounter;
+    //  long idCounter;
 
     @Override
-    public Course createCourse(Long id, String title, String instructor, int duration){
-        Course course = new Course(id, title, instructor,duration);
+    public Course createCourse(Long id, String title, String instructor, int duration) {
+        Course course = new Course(id, title, instructor, duration);
         list.add(course);
         return course;
     }
@@ -23,31 +24,34 @@ public class CourseServiceImpl implements CourseService {
             if (course.getId() == id) {
                 updatedCourse = new Course(id, title, instructor, duration);
             }
-        }  return updatedCourse;
+        }
+        return updatedCourse;
     }
 
     @Override
-    public Course getCourseById(Long id){
+    public Course getCourseById(Long id) {
 
-       for  (Course course : list){
-            if (course.getId() == id){
-                System.out.println(course);
-          return course;
+        for (Course course : list) {
+            if (course.getId().equals(id)) {
+                return course;
             }
         }
-            return null;
+        return null;
     }
+
     @Override
-    public List<Course> listAllCourses(){
-        for (Course course : list){
-            System.out.println(course);
+    public String listAllCoursesAsString() {
+        String resultingString = "";
+        for (Course course : list) {
+            resultingString += course.toString() + "\n";
         }
-        return list;
+        return resultingString;
     }
+
     @Override
-    public void deleteCourse(Long id){
-        for (Course course : list){
-            if (course.getId() == id){
+    public void deleteCourse(Long id) {
+        for (Course course : list) {
+            if (course.getId() == id) {
                 list.remove(course);
                 System.out.println(course + " Has been deleted!");
             }
