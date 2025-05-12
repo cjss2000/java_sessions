@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Course {
 
+    //update/change Long to UUID. updated everything associated with it
     private Long id = new Random().nextLong();
     private String title;
     private String instructor;

@@ -27,6 +27,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    //Change this to get course by name
     public Course getCourseById(Long id){
 
        for  (Course course : list){
@@ -39,11 +40,10 @@ public class CourseServiceImpl implements CourseService {
     }
     @Override
     public List<Course> listAllCourses(){
-        for (Course course : list){
-            System.out.println(course);
-        }
+
         return list;
     }
+    //verify this actdually returns the list or prints the list data, something with the ToString method?
     @Override
     public void deleteCourse(Long id){
         for (Course course : list){
