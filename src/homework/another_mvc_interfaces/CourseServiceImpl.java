@@ -40,6 +40,17 @@ public class CourseServiceImpl implements CourseService {
             return null;
     }
     @Override
+
+    public Course getCourseByUUID(UUID id){
+        for  (Course course : list){
+            if (course.getId() == id){
+            System.out.println(course);
+            return course;
+        }
+    }
+        return null;}
+
+    @Override
     public List<Course> listAllCourses(){
 
         return list;

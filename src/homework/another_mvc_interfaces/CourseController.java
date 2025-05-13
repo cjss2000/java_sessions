@@ -55,8 +55,10 @@ public class CourseController {
        cv.printMessage("Please provide UUID for course you'd like to remove:");
      //  Long courseIDtoDelete = cv.getInputAsInterger("Please provide ID for course you'd like to remove:");
        String courseTitletoDelete =   cv.scanner.nextLine();
-        cs.deleteCourse(courseTitletoDelete);
-
+      // cs.getCourseByUUID(courseTitletoDelete);
+     //   cs.deleteCourse(courseTitletoDelete);
+        UUID uuidToDelete = UUID.fromString(courseTitletoDelete);
+        cs.deleteCourse(uuidToDelete);
     }
     public void gatherCourseInfoToPrintandPrint(String messageToDisplay){
         cv.printMessage("Listing your courses...");
@@ -64,8 +66,8 @@ public class CourseController {
     }
     public void gatherCourseInfoandFindbyID(String messageToDisplay) {
         cv.printMessage("Please provide your ID");
-        Long courseIDtoSearch =   cv.scanner.nextLong();
-        cs.getCourseById(courseIDtoSearch);
+        String courseIDtoSearch =   cv.scanner.nextLine();
+        cs.getCourseByTitle(courseIDtoSearch);
     }
 
 }

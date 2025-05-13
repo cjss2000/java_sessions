@@ -9,6 +9,7 @@ public interface CourseService {
     Course updateCourse(UUID id, String title, String instructor, int duration);
     List<Course> listAllCourses();
     Course getCourseByTitle(String title);
+    Course getCourseByUUID(UUID id);
     void deleteCourse(UUID id);
 
 
