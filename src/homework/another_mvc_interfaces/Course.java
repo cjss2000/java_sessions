@@ -1,17 +1,19 @@
 package homework.another_mvc_interfaces;
 
 import java.util.Random;
+import java.util.UUID;
 
 public class Course {
 
     //update/change Long to UUID. updated everything associated with it
-    private Long id = new Random().nextLong();
+  //  private Long id = new Random().nextLong();
+    private UUID id = UUID.randomUUID();
     private String title;
     private String instructor;
     private int durationInHours;
 
 
-    Course(Long id, String title, String instructor, int durationInHours){
+    Course(UUID id, String title, String instructor, int durationInHours){
         this.id = id;
         this.title = title;
         this.instructor = instructor;
@@ -27,10 +29,10 @@ public class Course {
     }
 
 
-    public Long getId(){
+    public UUID getId(){
         return id;
     }
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
     public String getTitle() {

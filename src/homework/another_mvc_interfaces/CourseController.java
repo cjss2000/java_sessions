@@ -1,6 +1,7 @@
 package homework.another_mvc_interfaces;
 
 import java.util.Random;
+import java.util.UUID;
 
 public class CourseController {
 
@@ -40,7 +41,8 @@ public class CourseController {
     }
     public void gatherCourseInfoAndAddCourse(String messageToDisplay){
         cv.printMessage(messageToDisplay);
-        long id = new Random().nextLong();
+       // long id = new Random().nextLong();
+        UUID id = UUID.randomUUID();
         int hours  =  cv.getInputAsInterger("Input duration: ");
         String title = cv.getInputAsString("Input title: ");
         String instructor  =  cv.getInputAsString("Input instructor name: ");
@@ -50,10 +52,10 @@ public class CourseController {
     }
     public void gatherCourseInfoAndRemoveCourse(String messageToDisplay){
         cv.printMessage(messageToDisplay);
-       cv.printMessage("Please provide ID for course you'd like to remove:");
+       cv.printMessage("Please provide UUID for course you'd like to remove:");
      //  Long courseIDtoDelete = cv.getInputAsInterger("Please provide ID for course you'd like to remove:");
-        Long courseIDtoDelete =   cv.scanner.nextLong();
-        cs.deleteCourse(courseIDtoDelete);
+       String courseTitletoDelete =   cv.scanner.nextLine();
+        cs.deleteCourse(courseTitletoDelete);
 
     }
     public void gatherCourseInfoToPrintandPrint(String messageToDisplay){

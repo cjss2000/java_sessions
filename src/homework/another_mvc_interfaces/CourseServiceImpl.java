@@ -2,6 +2,7 @@ package homework.another_mvc_interfaces;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 
 public class CourseServiceImpl implements CourseService {
@@ -10,14 +11,14 @@ public class CourseServiceImpl implements CourseService {
   //  long idCounter;
 
     @Override
-    public Course createCourse(Long id, String title, String instructor, int duration){
+    public Course createCourse(UUID id, String title, String instructor, int duration){
         Course course = new Course(id, title, instructor,duration);
         list.add(course);
         return course;
     }
 
     @Override
-    public Course updateCourse(Long id, String title, String instructor, int duration) {
+    public Course updateCourse(UUID id, String title, String instructor, int duration) {
         Course updatedCourse = null;
         for (Course course : list) {
             if (course.getId() == id) {
@@ -28,10 +29,10 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     //Change this to get course by name
-    public Course getCourseById(Long id){
+    public Course getCourseByTitle(String title){
 
        for  (Course course : list){
-            if (course.getId() == id){
+            if (course.getTitle().equals(title)){
                 System.out.println(course);
           return course;
             }
@@ -45,7 +46,7 @@ public class CourseServiceImpl implements CourseService {
     }
     //verify this actdually returns the list or prints the list data, something with the ToString method?
     @Override
-    public void deleteCourse(Long id){
+    public void deleteCourse(UUID id){
         for (Course course : list){
             if (course.getId() == id){
                 list.remove(course);
