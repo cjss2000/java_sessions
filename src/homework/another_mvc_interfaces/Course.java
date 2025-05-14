@@ -5,36 +5,44 @@ import java.util.UUID;
 
 public class Course {
 
-    //update/change Long to UUID. updated everything associated with it
-  //  private Long id = new Random().nextLong();
-    private UUID id = UUID.randomUUID();
+
+
+    private Long id;
+   private UUID uuid;
+
     private String title;
     private String instructor;
     private int durationInHours;
 
 
-    Course(UUID id, String title, String instructor, int durationInHours){
+    Course(Long id, String title, String instructor, int durationInHours) {
+
         this.id = id;
         this.title = title;
         this.instructor = instructor;
         this.durationInHours = durationInHours;
     }
-    Course(String title, String instructor, int durationInHours){
+
+    Course(String title, String instructor, int durationInHours) {
         // TODO: generate random id here
-    //    this.id = id;
-        this.id = id; // <-- here
+        this.id = new Random().nextLong(10000000); // <-- here
+//        this.uuid = UUID.randomUUID();
         this.title = title;
         this.instructor = instructor;
         this.durationInHours = durationInHours;
     }
+
 
 
     public UUID getId(){
         return id;
     }
     public void setId(UUID id) {
+
+
         this.id = id;
     }
+
     public String getTitle() {
         return title;
     }
@@ -59,7 +67,7 @@ public class Course {
         this.durationInHours = durationInHours;
     }
 
-    public String toString(){
+    public String toString() {
         return this.getId() + " " + this.getTitle() + " " + this.getInstructor() + " " + this.getDurationInHours();
     }
 }
