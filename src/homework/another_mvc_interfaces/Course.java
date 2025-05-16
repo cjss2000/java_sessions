@@ -1,38 +1,35 @@
 package homework.another_mvc_interfaces;
 
-import java.util.Random;
 import java.util.UUID;
 
 public class Course {
 
-    private Long id;
-//    private UUID uuid;
+    private UUID uuid;
+
     private String title;
     private String instructor;
     private int durationInHours;
 
-    Course(Long id, String title, String instructor, int durationInHours) {
-        this.id = id;
+    Course(UUID id, String title, String instructor, int durationInHours) {
+        this.uuid = id;
         this.title = title;
         this.instructor = instructor;
         this.durationInHours = durationInHours;
     }
 
     Course(String title, String instructor, int durationInHours) {
-        // TODO: generate random id here
-        this.id = new Random().nextLong(10000000); // <-- here
-//        this.uuid = UUID.randomUUID();
+        this.uuid = UUID.randomUUID();
         this.title = title;
         this.instructor = instructor;
         this.durationInHours = durationInHours;
     }
 
-    public Long getId() {
-        return id;
+    public UUID getId() {
+        return uuid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(UUID id) {
+        this.uuid = id;
     }
 
     public String getTitle() {
