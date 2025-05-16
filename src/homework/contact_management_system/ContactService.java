@@ -16,9 +16,9 @@ public class ContactService {
 
     // TODO: pass an name instead of the id
     // TODO: add exceptions for when the id is not found
-    public void removeContact(int id) {
+    public void removeContact(String name) {
         for (Contact contact : list) {
-            if (contact.getId() == id) {
+            if (contact.getName().equals(name)) {
                 list.remove(contact);
             }
         }
@@ -29,7 +29,7 @@ public class ContactService {
         for (Contact contact : list) {
             if (contact.getId() == id) {
                 return contact;
-                //fix this later with print method
+
             }
         }
         return null;
@@ -38,7 +38,7 @@ public class ContactService {
     public void getAllContacts() {
         for (Contact contact : list) {
             contact.toString();
-            //fix this later with print method
+
         }
     }
 

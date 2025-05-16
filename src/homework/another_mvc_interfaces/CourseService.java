@@ -1,14 +1,18 @@
 package homework.another_mvc_interfaces;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface CourseService {
 
-    Course createCourse(Long id, String title, String instructor, int duration);
-    Course updateCourse(Long id, String title, String instructor, int duration);
+
+    Course createCourse(UUID id, String title, String instructor, int duration);
+    Course updateCourse(UUID id, String title, String instructor, int duration);
     List<Course> listAllCourses();
-    Course getCourseById(Long id);
-    void deleteCourse(Long id);
+    Course getCourseByTitle(String title);
+    Course getCourseByUUID(UUID id);
+    void deleteCourse(UUID id);
+
 
 
 }
