@@ -68,7 +68,7 @@ public class CourseController {
 
     public void gatherCourseInfoToPrintandPrint(String messageToDisplay) {
         cv.printMessage(messageToDisplay);
-        cv.printMessage(cs.listAllCoursesAsString());
+//        cv.printMessage(cs.listAllCoursesAsString());
     }
 
     public void gatherCourseInfoandFindbyID(String messageToDisplay) {
